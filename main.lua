@@ -22,10 +22,11 @@ caja.y =display.contentScaleX
 nave.x = display.contentCenterX
 nave.y = display.contentCenterY
 
---FUNCIONES
 
+--FUNCIONES
 local function moverNave(e)
  nave.x=e.x
+ nave.y=e.y
 end
 
 
@@ -33,5 +34,7 @@ end
 --EVENTOS
 nave:addEventListener("touch", moverNave)
 
+--FISICA
 fisica.addBody(caja, "dynamic")
 fisica.addBody(pasto,"static")
+fisica.addBody(nave, "kinestesics")
